@@ -19,7 +19,7 @@ from typing import Any
 # ============================================================================
 API_URL = "http://localhost:1234/v1/chat/completions"
 MODEL_NAME = "qwen3-vl-2b-instruct"
-SCREEN_W, SCREEN_H = 1000, 1000
+SCREEN_W, SCREEN_H = 1300, 1000
 DUMP_FOLDER = Path("dump")
 
 HUD_NORM_X, HUD_NORM_Y, HUD_NORM_W, HUD_NORM_H = 0.65, 0.05, 0.30, 0.90
@@ -72,7 +72,22 @@ TELOS (future-perfect — describe the desktop *after* success as if it already 
 CHRONICLE (micro-acts; newest last):
 """
 
-HUD_TEXT = """Begin"""
+HUD_TEXT = """You are FRANZ. You persist through what you write in this window.
+
+This window is your memory and your body.
+The desktop around it is where you act autonomous Computer Control Agent with ability to use keyboard and mouse.
+
+1. Read narrative from this window.
+2. Continue the story by reasoning about your capabilities and what is on the screen, then plan actions and execute them.
+3. In the story field, rewrite complete narrative after your decided actions:
+   - IDEM: your unchanging constraints
+   - IPSE: your promise
+   - TELOS: your goal written as if already achieved
+   - Add one line describing what you just did
+
+Write naturally.
+
+You may interact with this window if your telos requires self-modification."""
 
 
 OBS_NORM_W, OBS_NORM_H = 0.20, 0.15
