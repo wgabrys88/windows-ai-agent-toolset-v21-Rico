@@ -921,9 +921,16 @@ class HUD:
 
     def update(self, story: str) -> None:
         if self.edit:
-            current_num = ctypes.c_uint()
-            current_den = ctypes.c_uint()
-            user32.SendMessageW(self.edit, EM_GETZOOM, ctypes.byref(current_num), ctypes.byref(current_den))
+            # current_num = ctypes.c_uint()
+            # current_den = ctypes.c_uint()
+            # user32.SendMessageW(self.edit, EM_GETZOOM, ctypes.byref(current_num), ctypes.byref(current_den))
+            # if current_num.value > 0 and current_den.value > 0:
+            current_num = w.WPARAM(0)
+            current_den = w.LPARAM(0)
+            # EM_GETZOOM expects pointers passed as integer values
+            num_ptr = ctypes.cast(ctypes.pointer(current_num), ctypes.c_void_p).value
+            den_ptr = ctypes.cast(ctypes.pointer(current_den), ctypes.c_void_p).value
+            user32.SendMessageW(self.edit, EM_GETZOOM, num_ptr, den_ptr)
             if current_num.value > 0 and current_den.value > 0:
                 self.zoom_num = current_num.value
                 self.zoom_den = current_den.value
