@@ -1,7 +1,6 @@
 # FRANZ: A Stateless Vision-Language Agent with Narrative Identity for Persistent Task Execution
 
-**Wojciech Gabryś**  
-wgabrys88@gmail.com  
+**Wojciech Gabryś**
 February 06, 2026
 
 ## Abstract
